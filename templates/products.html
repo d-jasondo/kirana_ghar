@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Kirana Ghar{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+    <!-- Instant Cashback Offer Banner -->
+    <section class="mb-12">
+        <div class="bg-gradient-to-r from-primary to-orange-500 rounded-xl p-8 mb-8 text-white shadow-lg flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <span class="material-symbols-outlined text-5xl text-yellow-300">auto_awesome</span>
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight">Instant Cashback Offer!</h2>
+                    <p class="text-lg mt-1 opacity-90">Buy above <span class="font-bold">₹5000/-</span> get instant <span class="font-bold text-yellow-300">₹1000/-</span> cashback.</p>
+                </div>
+            </div>
+            <a class="bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors hidden sm:block" href="#">Shop Now</a>
+        </div>
+        
+        <!-- Featured Products Section -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Featured Products</h2>
+            <div class="flex items-center gap-4">
+                <button class="flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors border border-zinc-300 dark:border-zinc-700 rounded-lg px-4 py-2">
+                    <span class="material-symbols-outlined text-base">filter_list</span>
+                    Filter
+                </button>
+                <div class="relative">
+                    <button class="flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors border border-zinc-300 dark:border-zinc-700 rounded-lg px-4 py-2">
+                        <span class="material-symbols-outlined text-base">swap_vert</span>
+                        Sort By
+                        <span class="material-symbols-outlined text-base">expand_more</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Products Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <!-- Premium Basmati Rice -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdD65LJzchr_W-A0RNJ_SccB1x3gBJLHhzQeeYD3orCfZjAwVZcEN_hoeTegJu0zunqNiDe4LgUOKChUYXrSb4nbBejk5f-X1ghKS59iK0qb32zdOsZ5PWr0ASFZbPSOBxCco3SOxfB8UyX3361qklU0aJNvDYRHkEQZD-9ByspunjDxAnn3O8y2L0ANso1U9ub3wI91tanQP4AXFrEEj4pU4zbstmWXvmLEbXJ3t5gstFnOUIHKMnJWu0IP0mT24VjyhvzVDbQlQ');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Premium Basmati Rice</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">High-quality, aromatic rice</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹120/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="1">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Organic Toor Dal -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzPHDsks9fGCJjgF24st9iU7tLioX462pW6aV8ESx0J9_5HJL5sgoBjl-Zvv5itHNlU9NAh4rJV6_uVX2qR7gMCm_Gk4f_BRghaJt7ra63X1KDlZ9t6P_NB_EqMI6M2bxB38ZBTIOPerMw-HlL2uglvYJTDiH3RNabUjsOeG_vViA9Ljsf1egQn_XxtOeE_yjnDLYaXhglG1k3DdoW24FuOAE9gig7TMrx2bHojHzWN13js-xNrnENySEb4LO8Opq5vjT1ogLASyc');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Organic Toor Dal</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Protein-rich lentil</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹150/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="2">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Refined Sunflower Oil -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB74ZTUs4xZinGk9WqBuBGo7Av3pKg0TGKmcGaG_ec5y-jodALTU_LwHT1d2qoAFV2ISFK0Jrw3cT1avSqNe4O2Bii70jIaN9Rt1vvPNqkAXicsR-yaITytUlLAUymH9c--IO4g3KQOwjIOrbokMaVVl_seOzLqq2ZPiZCKE-0chAQTu0Ww11gChYEWpMpBX5Aik4LFPh-eVhVIEVi7rQGs3szzynErZNsvie23hANQ6dBnTZcGtcU7Xd5UAJuWBEf3h8zCWX3Lbfo');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Refined Sunflower Oil</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Light and healthy cooking oil</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹110/L</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="3">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Granulated Sugar -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAe1s9SkGNGfSUIuZHmQzPygh0vnel8XNmTPvUoP7PRlJkon6RlCo0myGWJHaGjKGzZNs71UJeSOg2vpCWSoa84kmx_lsJw5J4mDqrZSnuhrRU7x7WvsGt5vUfJ_waXaPw4IKlTU42x99t7q97AUXJXaoTKIXdTrOrJQz7Rgu03tiVCWNLs1lSj7Gi5rbJtI7kkl41_mPMshLXuGlFaMs-RGDbKwLkBJdIzKjIZUtoqTitoBoxGZr1oHSFwwnmatc07jjf-wBrA1Uw');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Granulated Sugar</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Fine, free-flowing sugar</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹45/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="4">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jaggery -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDety2DcVIBGkMOfyrGW67wsU6rN6ZMXbyIAZRhgE3C0DC-vF00ANPxWE-9F0KBMopdBgfXeg88zo2Z4TQoBhmATqqLjRWQKkb0idNoGsz0kMR28WJG4zwk1Z2eO4BQrZguaB9gRlXkQqmP3wNhOzz165bvGv0zt8guLhxWFoiWqMkE0RJ0UW_NceSQ4-HYzxLOuann5U5cXsS3mWnmMD92BqQ1tulmFMlvMqs2EmTojTWrDi09l3FSIjOGzgfAAggbAGpg8t64F_E');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Jaggery</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Natural sweetener</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹60/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="5">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Combo Offers Section -->
+    <section class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Combo Offers</h2>
+            <a class="text-sm font-medium text-primary hover:underline" href="#">View All</a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Staples Combo Pack -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row">
+                <div class="sm:w-2/5 p-4 flex flex-col justify-center">
+                    <div class="flex -space-x-4 justify-center mb-4">
+                        <img class="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-background-dark/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdD65LJzchr_W-A0RNJ_SccB1x3gBJLHhzQeeYD3orCfZjAwVZcEN_hoeTegJu0zunqNiDe4LgUOKChUYXrSb4nbBejk5f-X1ghKS59iK0qb32zdOsZ5PWr0ASFZbPSOBxCco3SOxfB8UyX3361qklU0aJNvDYRHkEQZD-9ByspunjDxAnn3O8y2L0ANso1U9ub3wI91tanQP4AXFrEEj4pU4zbstmWXvmLEbXJ3t5gstFnOUIHKMnJWu0IP0mT24VjyhvzVDbQlQ"/>
+                        <img class="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-background-dark/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzPHDsks9fGCJjgF24st9iU7tLioX462pW6aV8ESx0J9_5HJL5sgoBjl-Zvv5itHNlU9NAh4rJV6_uVX2qR7gMCm_Gk4f_BRghaJt7ra63X1KDlZ9t6P_NB_EqMI6M2bxB38ZBTIOPerMw-HlL2uglvYJTDiH3RNabUjsOeG_vViA9Ljsf1egQn_XxtOeE_yjnDLYaXhglG1k3DdoW24FuOAE9gig7TMrx2bHojHzWN13js-xNrnENySEb4LO8Opq5vjT1ogLASyc"/>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-white text-center">Staples Combo Pack</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 text-center">Rice (5kg) + Toor Dal (2kg)</p>
+                </div>
+                <div class="sm:w-3/5 p-6 bg-primary/5 dark:bg-primary/10 flex flex-col justify-between">
+                    <div>
+                        <p class="text-zinc-600 dark:text-zinc-300 text-sm mb-2">Get the essentials together and save big! Perfect for a family's monthly needs.</p>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-3xl font-bold text-primary">₹850</span>
+                            <span class="text-lg font-medium text-zinc-500 dark:text-zinc-400 line-through">₹900</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                        Add Combo to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cooking Essentials Kit -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row">
+                <div class="sm:w-2/5 p-4 flex flex-col justify-center">
+                    <div class="flex -space-x-4 justify-center mb-4">
+                        <img class="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-background-dark/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB74ZTUs4xZinGk9WqBuBGo7Av3pKg0TGKmcGaG_ec5y-jodALTU_LwHT1d2qoAFV2ISFK0Jrw3cT1avSqNe4O2Bii70jIaN9Rt1vvPNqkAXicsR-yaITytUlLAUymH9c--IO4g3KQOwjIOrbokMaVVl_seOzLqq2ZPiZCKE-0chAQTu0Ww11gChYEWpMpBX5Aik4LFPh-eVhVIEVi7rQGs3szzynErZNsvie23hANQ6dBnTZcGtcU7Xd5UAJuWBEf3h8zCWX3Lbfo"/>
+                        <img class="h-20 w-20 rounded-full object-cover border-4 border-white dark:border-background-dark/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe1s9SkGNGfSUIuZHmQzPygh0vnel8XNmTPvUoP7PRlJkon6RlCo0myGWJHaGjKGzZNs71UJeSOg2vpCWSoa84kmx_lsJw5J4mDqrZSnuhrRU7x7WvsGt5vUfJ_waXaPw4IKlTU42x99t7q97AUXJXaoTKIXdTrOrJQz7Rgu03tiVCWNLs1lSj7Gi5rbJtI7kkl41_mPMshLXuGlFaMs-RGDbKwLkBJdIzKjIZUtoqTitoBoxGZr1oHSFwwnmatc07jjf-wBrA1Uw"/>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-white text-center">Cooking Essentials Kit</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 text-center">Sunflower Oil (5L) + Sugar (5kg)</p>
+                </div>
+                <div class="sm:w-3/5 p-6 bg-primary/5 dark:bg-primary/10 flex flex-col justify-between">
+                    <div>
+                        <p class="text-zinc-600 dark:text-zinc-300 text-sm mb-2">Stock up your kitchen with this convenient bundle of cooking must-haves.</p>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="text-3xl font-bold text-primary">₹750</span>
+                            <span class="text-lg font-medium text-zinc-500 dark:text-zinc-400 line-through">₹775</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                        Add Combo to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Smart Related Products Suggestions -->
+    <section class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 lg:p-8">
+        <div class="flex items-center gap-4 mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+            <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Smart Related Products Suggestions</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <!-- Masoor Dal -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWNgOZjMPKuuugmjbmbHCiigCLfeOCWApuCfxIdqA484CRKaolMY41W4WpX5EXilCmeiJYyBXmsFwTGn4i0MUDepnO6UM1hPDfzKvhf4OPeVHifeFPGOZOKEM7GiphRz-ZRgnMpS2Cmzzn_lyTsi-mt4HHI1UWMmZ_cqy1g28_eCv4ThuMk5Acb3pkyrGTjI7Okq8bKxLG9sPaA2GKz4iHSuqW-JjaTLDeT0hIKhpO3MO3jLiGH3gj7sPVhd_1OnzlBqpCy4bdzj0');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Masoor Dal</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Red lentil, cooks quickly</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹130/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="6">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mustard Oil -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4eZsviGEveyntMLlX0Xt7Xr2iYMmSVhwMqqKJDZcrzMB0zOQToUcH4zJ9cYpwqMb23S5p-E3XrW5zy2QsGUlGafQGP0A5PMKJ92BM6J8vyPI_Tu3yfsEY8oKNqRIWdvFoqs8v362B62irlYB3925lQ65zYiylDEI77GekIYWPZ64XgE93uEAd8kku7QMxqQc6u38cyfiUNkZ6uwlSE0R5zzCtVP7E_huYqKLHQ7vX6yhVHgVnW1HraNhDEkdfuKMCPjJzLqM1WuQ');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Mustard Oil</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Strong-flavored cooking oil</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹180/L</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="7">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brown Rice -->
+            <div class="group relative bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-square w-full bg-center bg-no-repeat bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAG3qNzvKc-8G9uDOpPE4_rRNblmKtFAA40xtvhnThvQptp18YDWjy07E-8ELpy4-o21De8KXMBxNqbMAK6cHPnWPlCK0Hy_Pr2XVEb2NsNiBMSukZbgu1EmJcMQdSJSeGv8UXXAErnKK1YtrU6pHSBGYLgnCPRDWF8kH1TTRRvH2REEa4HkOxZXl9oQz-Y_djfSp7x4bPTqP-wDWu1yrB7T7BovttQTdh9ORBrorQMk8muydbRR-ZmXQww87DNLiQi9yh17GRbw0Y');"></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-white">Brown Rice</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-3">Nutritious whole grain</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg text-primary">₹140/kg</span>
+                        <button class="bg-primary/10 dark:bg-primary/20 text-primary rounded-full p-2 hover:bg-primary hover:text-white transition-colors duration-300 add-to-cart" data-product-id="8">
+                            <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pagination -->
+    <nav class="flex items-center justify-center gap-2 mt-12">
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-white bg-primary font-bold text-sm" href="#">1</a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">2</a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">3</a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">4</a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">5</a>
+        <a class="flex items-center justify-center h-10 w-10 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </a>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @keyframes slide-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-16px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-slide-in {
+            animation: slide-in 0.5s ease-out forwards;
+        }
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f97316",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'slide-in': 'slide-in 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'slide-in': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-1rem)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <title>{% block title %}Kirana Ghar{% endblock %}</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="flex h-full grow flex-col">
+            <!-- Header -->
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-zinc-200/50 dark:border-zinc-800/50 px-10 py-5">
+                <div class="flex items-center gap-10">
+                    <a class="flex items-center gap-2" href="{{ url_for('index') }}">
+                        <img alt="Kirana Ghar Logo" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3egmstoVTQNsHQcInquak6RK4IGU8SbRxtT1XR5Qcmaz8tfLDHDRvByHDjsbxvHBmHsl01mCiW3ZE-lNFGgJgiMrF9ZHzUCuPkpc_Ti06AoUIo9MIneZ229P6Ot0OROLg1mabzZBKXu79iHu6jEEMqQ5YqQ_Fjyn2B6fXVZ_Ag7Mi4Fa4NyFdxbkh62y2cACOFqrbfC_PftxfKRVIvUWgDjYYlb9Jkz5-Y8fk9lpQBHWF-7_4xZBlepNe5OhYItjCkkflTD47z_w"/>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-10">
+                        <a class="text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="{{ url_for('index') }}">Home</a>
+                        <a class="text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="{{ url_for('products') }}">Products</a>
+                        <div class="group relative">
+                            <a class="flex items-center gap-1 text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+                                <span class="material-symbols-outlined text-lg text-primary">auto_awesome</span> AI Features
+                            </a>
+                            <div class="absolute z-10 mt-3 w-72 rounded-xl bg-white dark:bg-zinc-800 shadow-lg ring-1 ring-black ring-opacity-5 hidden group-hover:block animate-slide-in">
+                                <div class="py-2">
+                                    <a class="flex items-center gap-4 px-5 py-3 text-base text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors" href="#">
+                                        <span class="material-symbols-outlined text-primary">trending_up</span>
+                                        <div>
+                                            <p class="font-semibold">Local Trends</p>
+                                            <p class="text-sm text-zinc-500 dark:text-zinc-400">Products popular in your area</p>
+                                        </div>
+                                    </a>
+                                    <a class="flex items-center gap-4 px-5 py-3 text-base text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors" href="#">
+                                        <span class="material-symbols-outlined text-primary">inventory_2</span>
+                                        <div>
+                                            <p class="font-semibold">Smart Reorders</p>
+                                            <p class="text-sm text-zinc-500 dark:text-zinc-400">AI-powered suggestions</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="{{ url_for('brands') }}">Brands</a>
+                        <a class="text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors" href="{{ url_for('deals') }}">Deals</a>
+                    </nav>
+                </div>
+                <div class="flex flex-1 justify-end gap-5">
+                    <!-- Search Bar -->
+                    <div class="relative w-full max-w-md">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                            <svg class="text-zinc-400 dark:text-zinc-500" fill="currentColor" height="22px" viewBox="0 0 256 256" width="22px" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                            </svg>
+                        </div>
+                        <input id="search-input" class="w-full rounded-xl border-0 bg-zinc-100 dark:bg-zinc-800/50 h-12 pl-12 pr-24 text-base text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Search products, brands..." type="search"/>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-4 space-x-3">
+                            <button class="text-zinc-400 dark:text-zinc-500 hover:text-primary dark:hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-2xl">mic</span>
+                            </button>
+                            <button class="text-zinc-400 dark:text-zinc-500 hover:text-primary dark:hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-2xl">photo_camera</span>
+                            </button>
+                        </div>
+                        <!-- Search Results Dropdown -->
+                        <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-800 rounded-xl shadow-lg border border-zinc-200 dark:border-zinc-700 hidden z-50">
+                            <div class="p-2">
+                                <div class="text-sm text-zinc-500 dark:text-zinc-400 p-2">No results found</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wishlist Button -->
+                    <button id="wishlist-btn" class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors relative group">
+                        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg" class="group-hover:text-red-500 transition-colors">
+                            <path d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path>
+                        </svg>
+                        <span id="wishlist-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">
+                            0
+                        </span>
+                    </button>
+                    
+                    <!-- Cart Button -->
+                    <a href="{{ url_for('cart') }}" class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors relative">
+                        <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path>
+                        </svg>
+                        {% if session.cart %}
+                        <span class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {{ session.cart|length }}
+                        </span>
+                        {% endif %}
+                    </a>
+                    
+                    <!-- User Actions -->
+                    <div class="flex items-center gap-3">
+                        <button class="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800/50 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors">
+                            <span class="material-symbols-outlined text-2xl">person</span>
+                        </button>
+                        <a href="{{ url_for('login') }}" class="bg-primary text-white font-semibold h-12 px-6 rounded-xl text-base flex items-center gap-2 hover:bg-primary/90 transition-transform transform hover:scale-105">
+                            Login
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="px-10 py-2">
+                        {% for message in messages %}
+                            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-2">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <!-- Main Content -->
+            <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* Custom CSS for Qwipo - Additional styles beyond Tailwind */
+
+/* Custom animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Custom utility classes */
+.animate-slide-in-up {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1173d4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0d5ba8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #1173d4;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #0d5ba8;
+}
+
+/* Custom focus styles */
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-zinc-800;
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+.btn-secondary {
+    @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-semibold px-6 py-3 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all duration-200;
+}
+
+/* Custom card styles */
+.card {
+    @apply bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300;
+}
+
+.card-hover {
+    @apply transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300;
+}
+
+/* Custom input styles */
+.input-field {
+    @apply w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none text-zinc-900 dark:text-white placeholder:text-zinc-500 dark:placeholder:text-zinc-400 transition-all duration-200;
+}
+
+/* Custom loading spinner */
+.spinner {
+    @apply animate-spin rounded-full border-2 border-zinc-300 border-t-primary;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+    background: linear-gradient(135deg, #1173d4 0%, #0d5ba8 100%);
+}
+
+.gradient-hero {
+    background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
+}
+
+/* Custom text effects */
+.text-gradient {
+    background: linear-gradient(135deg, #1173d4 0%, #0d5ba8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom backdrop blur */
+.backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Custom shadow effects */
+.shadow-custom {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-custom-lg {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom hover effects */
+.hover-lift {
+    @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/25;
+}
+
+/* Custom responsive utilities */
+@media (max-width: 640px) {
+    .mobile-padding {
+        @apply px-4;
+    }
+    
+    .mobile-text {
+        @apply text-sm;
+    }
+}
+
+/* Custom notification styles */
+.notification {
+    @apply fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform;
+}
+
+.notification-success {
+    @apply bg-green-500 text-white;
+}
+
+.notification-error {
+    @apply bg-red-500 text-white;
+}
+
+.notification-warning {
+    @apply bg-yellow-500 text-white;
+}
+
+.notification-info {
+    @apply bg-blue-500 text-white;
+}
+
+/* Custom search dropdown */
+.search-dropdown {
+    @apply absolute top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-800 rounded-xl shadow-lg border border-zinc-200 dark:border-zinc-700 z-50;
+}
+
+/* Custom product card styles */
+.product-card {
+    @apply group relative flex flex-col bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+}
+
+.product-image {
+    @apply relative h-48 bg-zinc-100 dark:bg-zinc-800;
+}
+
+.product-badge {
+    @apply absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold;
+}
+
+.product-badge-new {
+    @apply bg-primary/10 text-primary;
+}
+
+.product-badge-bestseller {
+    @apply bg-yellow-400/20 text-yellow-600;
+}
+
+.product-badge-sale {
+    @apply bg-red-400/20 text-red-600;
+}
+
+/* Custom cart styles */
+.cart-item {
+    @apply flex items-center gap-4 p-4 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg;
+}
+
+.cart-item-image {
+    @apply w-20 h-20 bg-zinc-100 dark:bg-zinc-700 rounded-lg overflow-hidden;
+}
+
+.cart-quantity-control {
+    @apply flex items-center gap-2;
+}
+
+.cart-quantity-btn {
+    @apply w-8 h-8 bg-zinc-100 dark:bg-zinc-700 rounded-lg flex items-center justify-center hover:bg-zinc-200 dark:hover:bg-zinc-600 transition-colors;
+}
+
+/* Custom form styles */
+.form-group {
+    @apply mb-6;
+}
+
+.form-label {
+    @apply block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2;
+}
+
+.form-input {
+    @apply w-full px-4 py-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none text-zinc-900 dark:text-white placeholder:text-zinc-500 dark:placeholder:text-zinc-400 transition-all duration-200;
+}
+
+.form-checkbox {
+    @apply rounded border-zinc-300 text-primary focus:ring-primary;
+}
+
+/* Custom navigation styles */
+.nav-link {
+    @apply text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors;
+}
+
+.nav-dropdown {
+    @apply absolute z-10 mt-3 w-72 rounded-xl bg-white dark:bg-zinc-800 shadow-lg ring-1 ring-black ring-opacity-5 hidden group-hover:block animate-slide-in;
+}
+
+.nav-dropdown-item {
+    @apply flex items-center gap-4 px-5 py-3 text-base text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors;
+}
+
+/* Custom hero section styles */
+.hero-section {
+    @apply relative min-h-[620px] rounded-xl overflow-hidden flex flex-col justify-between p-12 bg-gradient-to-t from-emerald-900/70 via-emerald-900/50 to-transparent;
+}
+
+.hero-background {
+    @apply absolute inset-0 bg-cover bg-center opacity-20;
+}
+
+.hero-content {
+    @apply relative z-10 flex flex-col gap-6 max-w-3xl;
+}
+
+.hero-stats {
+    @apply relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-white animate-slide-in;
+}
+
+.hero-stat-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transition-transform transform hover:scale-105 hover:bg-white/20;
+}
+
+/* Custom loading states */
+.loading-skeleton {
+    @apply animate-pulse bg-zinc-200 dark:bg-zinc-700 rounded;
+}
+
+.loading-spinner {
+    @apply inline-block w-4 h-4 border-2 border-zinc-300 border-t-primary rounded-full animate-spin;
+}
+
+/* Custom error states */
+.error-state {
+    @apply text-center py-16;
+}
+
+.error-icon {
+    @apply w-24 h-24 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-6;
+}
+
+.error-title {
+    @apply text-2xl font-bold text-zinc-900 dark:text-white mb-2;
+}
+
+.error-message {
+    @apply text-zinc-600 dark:text-zinc-400 mb-6;
+}
+
+/* Custom success states */
+.success-state {
+    @apply text-center py-16;
+}
+
+.success-icon {
+    @apply w-24 h-24 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center mx-auto mb-6;
+}
+
+.success-title {
+    @apply text-2xl font-bold text-zinc-900 dark:text-white mb-2;
+}
+
+.success-message {
+    @apply text-zinc-600 dark:text-zinc-400 mb-6;
+}
+
+/* Custom responsive design helpers */
+.container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+}
+
+.flex-responsive {
+    @apply flex flex-col md:flex-row gap-4;
+}
+
+/* Custom accessibility improvements */
+.sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+.focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+/* Custom print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .print-break {
+        page-break-before: always;
+    }
+}

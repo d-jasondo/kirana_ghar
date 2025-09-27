@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Deals & Promotions - Kirana Ghar{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">Deals & Promotions</h1>
+        <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">Explore our latest offers and discounts on a wide range of products. Don't miss out on these limited-time deals!</p>
+    </div>
+
+    <!-- Daily Deals Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-zinc-900 dark:text-white tracking-tight mb-6">Daily Deals</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Kitchen Appliances -->
+            <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-zinc-900 shadow-md hover:shadow-xl dark:hover:shadow-primary/10 transition-shadow duration-300">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzQez3fo3ZAT8LoMJHsAf-I06rBwwi6D_72mlCTKYnYqMg_UI9R6-W2aucXeSdupC4KAHlaip9Fwuq5dHxyfD7cMpARoGrnU8cQMtP_uTCO53AS97xwWd3otBt0d5imBiXhh2jwYvZNpbovZMZmbN70VxlDdcysbYllM40MFRwJpSm9K8nBnYCBrL-SDzTQ0qS-RS3LwigvtLrEm5v0k8xBTCFQNdkbmtUOgVGVx1dTIbMoW817RzVjFTAn6LxZE6ZybJ-hTd2drM");'></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-zinc-100">Up to 40% off Kitchen Appliances</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Limited time offer on top brands</p>
+                </div>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <!-- Office Supplies -->
+            <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-zinc-900 shadow-md hover:shadow-xl dark:hover:shadow-primary/10 transition-shadow duration-300">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDwgBSYfTqa3mP2NT6tm6GIP55mRLlZ60fC3DNQPkX8FiJS_KDu40DnObxV_z7mYql4MEge6cKxFVibFmEh3qTxDH3XpQpbhcHaLYwMCIsItx5hDPguZxWNY5wl9aw6W2F32ufAk_uE_zW-QeWyKytIcpJLArIxBmoQ5cnAJugLFrTuoSBJBEj3VoMatpbr5_K--BnkvEdtorvLYsnQUdp7InXD8Caqiw5QEyu1Zqs5egbf3BNMVHPtLXE45aPdRK8R2YolhWHeUVU");'></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-zinc-100">Save Big on Office Supplies</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Stock up for your business</p>
+                </div>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <!-- Electronics -->
+            <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-zinc-900 shadow-md hover:shadow-xl dark:hover:shadow-primary/10 transition-shadow duration-300">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAX_oJUw4TmqFKlo6RLimyYr-NW6KPLhn-fmg-1wrjcD5Zh-Qq4lu3KoPO46bk5RO2-hzNM9SXsXLs08wt5J7HrSpMVjtZuhTaUaanE5gVyXwCEvAEsTq5xT2dH4_e6db_Dcl-1Td5VdgD-43pMi-5OjPjcwtqM7frA6l1CC-z35CbeCcT3_yOKMGh2JY0XbP8r8_KlIdddNm6fHliGyFWW6Icz4_IlXbnXQJGr_SYryp7DWUKxQy5z-52wMzSWJ8DDcRUepWpH8e0");'></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-zinc-100">Exclusive Discounts on Electronics</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Latest gadgets at unbeatable prices</p>
+                </div>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+
+            <!-- Home Essentials -->
+            <div class="group relative overflow-hidden rounded-xl bg-white dark:bg-zinc-900 shadow-md hover:shadow-xl dark:hover:shadow-primary/10 transition-shadow duration-300">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCcc1ZodizoN15bOMB5C88gKzn6H4qnyZYUwj1ukjf0hITWQl2d5veAY7DPGEmEY0GRtijEW3Q2xUxyLt2R48CV0YTh5HAR8HTQgar1wbThDtSqpPu7LDi4i02g2N130nBr_5rH0XwRcVZe2RI9cPoTBJszXv751M87fn3kNj9dXcdRaYNwc92AVppQXHBLmgwBettDQT4415UgPM6x45yZMDHuySinXyxlzxVFOEPBmdGewHdr2LYlhBFyi0cfeBJ_YzTWlM-tl0");'></div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg text-zinc-800 dark:text-zinc-100">Deals on Home Essentials</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Upgrade your home for less</p>
+                </div>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited-Time Offers Section -->
+    <section class="mb-16">
+        <div class="flex justify-between items-baseline mb-6">
+            <h2 class="text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">Limited-Time Offers</h2>
+            <a class="text-sm font-semibold text-primary hover:underline" href="#">View All</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Clearance Sale -->
+            <div class="flex flex-col gap-3 rounded-lg overflow-hidden bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1nTLtYj88whrmgd92slmoKcFI9ezWb-SaUdHOa_5KW3YueatBgsE_6dcfqj-MYFnRwby_d4RpTOENybK9I6nOwdGeXlDQob6kzc6HtLQdd2knZ7dyueD76iwNtd14RwQ8cpw0fP70Qvtmxk2Ns8pBj2KreCkvIk8p4PLrIcvXwyuBdzvmQOzZt9pSiI-vMNRfpV2Q8cQCxpqVHxxugPcxZ1b8Ium4wOfoFoJRlVTG5h3Ai9TLUL5kJbenlKYW4FHN-dUK5oUSyk0");'></div>
+                <div class="p-4 flex-grow">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-100">Clearance Sale</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Final reductions</p>
+                </div>
+            </div>
+
+            <!-- Back to School Specials -->
+            <div class="flex flex-col gap-3 rounded-lg overflow-hidden bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCp32tYs8uR3DQYoerT8tpuRlGZ63z-_oQXcVJJuitgdyhuzu3-pv_HINF1kAB5PvUM2tyeez3z3s0AJu9wQyoyoa_b2QeGiURoW6uNP_9ZzhYL-jpBB3-IWgWaznem9fyqdRez65Ah_RG2rpk3oJN4KvGfSYgx1Uz1fyJClz-ztZ5cAdkUjYc1CoIYHH8RTQL59a5KvFLT1KItVPaF_Om-cdqs04NT8r0HB83amJeA9eIiqksb56riS5CZmEw4CKkpgw0OgRgXIQc");'></div>
+                <div class="p-4 flex-grow">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-100">Back to School Specials</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Get ready for the new year</p>
+                </div>
+            </div>
+
+            <!-- Holiday Promotions -->
+            <div class="flex flex-col gap-3 rounded-lg overflow-hidden bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfIhpaHu_xNa4SAWylE23mXd7TZW0g1gQCeDw0liwWPEkzJCoFzOJzoXI33Fv4i7KW5tTJKfkoHttPTbRpTQkgAY5IuNXGvwOe58mUVEc6AQ0kWJr0yHiz3mA_Po-hbQz2btwjLKgs3Sg1gCxnI4nrh61yzyDjfHp19D76J9FMtbWSYgVSGo5cEtXjzcOCbUdfTPbbDPnhCSZN8Bg47G8WZyoAHMxyJwulCHfyPCRao6Les4XM-pEXYXsoJ8m7Egtqa6b-mW1M72g");'></div>
+                <div class="p-4 flex-grow">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-100">Holiday Promotions</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Festive offers for the season</p>
+                </div>
+            </div>
+
+            <!-- Seasonal Discounts -->
+            <div class="flex flex-col gap-3 rounded-lg overflow-hidden bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGbMW9enSLRQOVStFPaS4zMTPlLTGAHSjxf5rFPuS8U4PAnHM-5IBVFZGCnlGMU0WlF0Qyz5uZd1G-K4aZGcvSEOJocEB2-16IFjWeRJJnhi-2exajpRZr0WuUaPl1I_DD8wku3JGxD_UgeZsTh3Gnw0uu4IbFH01AQ5Wu8q7HdGarG6_CqaYzR9PnyZEcTcIwMEyF1XS7vvhfnqMzL2Bw3AgFIYbVi1c0dE2IKBwxyc5zcYyELr6JKRgeOdExnMvNxHv1mtdDI2s");'></div>
+                <div class="p-4 flex-grow">
+                    <h3 class="font-bold text-base text-zinc-800 dark:text-zinc-100">Seasonal Discounts</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Savings on seasonal products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bulk Discounts Section -->
+    <section>
+        <h2 class="text-3xl font-bold text-zinc-900 dark:text-white tracking-tight mb-6">Bulk Discounts</h2>
+        <div class="rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-lg border border-zinc-200 dark:border-zinc-800">
+            <div class="grid md:grid-cols-2 items-center">
+                <div class="w-full bg-center bg-no-repeat aspect-video md:aspect-auto md:h-full bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDakWMK1chhX9nWKrDzDdJp4QQBQuD3XJNfUrccZhJwW_duG7UlOZgxhSltrVqPmRNXMWBdO_m3PUpp12KVkgrjT55QsLHeWbNLOldr6Y3ihZvqg6d99EaciYCPulAwg_XrdLH2tel50xIciI1A2DsX7L9fEgim8zq_V-eZ3AH0vmmUTgZS293uLVhKmzXc_Hrme3Wc5u2OGq5N_oDakb8aq5sE7Rz1q6MHxixCGXQLlWE8b-s9d3jzT9cmZ_IqnwJEfEe52vKIXtc");'></div>
+                <div class="p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">Buy More, Save More</h3>
+                    <p class="mt-2 text-zinc-600 dark:text-zinc-400">Get additional discounts when you purchase in bulk. Ideal for retailers and distributors.</p>
+                    <button class="mt-6 inline-flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-all">
+                        <span>View Bulk Offers</span>
+                        <span class="material-symbols-outlined text-lg ml-2">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

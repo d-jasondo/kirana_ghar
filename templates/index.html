@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Kirana Ghar - Your Business, Powered by AI{% endblock %}
+
+{% block content %}
+<div class="flex flex-col gap-12">
+    <!-- Hero Section -->
+    <div class="@container">
+        <div class="relative min-h-[620px] rounded-xl overflow-hidden flex flex-col justify-between p-12 bg-gradient-to-t from-emerald-900/70 via-emerald-900/50 to-transparent">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDq_o2iSgS4m04Fm_y1e0W-3K6d_wz-e_1n3a8l3f2r-Z4P5yQe-f_b8n0u8g2y_X-f_c3b_E9l_I_g0r8n_T1o_N7w_E-l1v_D2g_Y5q_Q4r_U_e_O8l_F3p_S_I4a_Z7q-t_C-n_L4h_B_w_G8o_E3k_N9y_J_L_A_S_E2u_U_W_V_G_T_Y_Z_X-c_B_I_d_o_t_q_r_s_p_l_k_j_h_g_f_d_c_b_a_y_x_w_v_u_t_s_r_q_p_o_n_m_l_k_j_i_h_g_f_e_d_c_b_a_Z_Y_X_W_V_U_T_S_R_Q_P_O_N_M_L_K_J_I_H_G_F_E_D_C_B_A'); opacity: 0.2;"></div>
+            <div class="relative z-10 flex flex-col gap-6 max-w-3xl">
+                <h1 class="text-white text-5xl @[520px]:text-7xl font-extrabold tracking-tight animate-slide-in" style="animation-delay: 0.2s;">Your Business, Powered by Kirana Ghar</h1>
+                <p class="text-zinc-200 text-lg @[520px]:text-2xl animate-slide-in" style="animation-delay: 0.4s;">Discover a smarter way to manage your inventory and orders. Kirana Ghar's AI-driven platform offers personalized reorder suggestions and local trend insights to keep your business ahead.</p>
+                <a href="{{ url_for('products') }}" class="bg-primary text-white font-bold h-16 px-10 rounded-xl w-fit text-xl tracking-wide hover:bg-primary/90 transition-all transform hover:scale-105 animate-slide-in" style="animation-delay: 0.6s;">Explore Products</a>
+            </div>
+            <div class="relative z-10 grid grid-cols-1 @[768px]:grid-cols-3 gap-6 text-white animate-slide-in" style="animation-delay: 0.8s;">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transition-transform transform hover:scale-105 hover:bg-white/20">
+                    <div class="p-4 rounded-full bg-primary/20">
+                        <span class="material-symbols-outlined text-primary text-2xl">local_fire_department</span>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg">Trending Near You</p>
+                        <p class="text-base text-zinc-300">Fresh Produce Mix</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transition-transform transform hover:scale-105 hover:bg-white/20">
+                    <div class="p-4 rounded-full bg-primary/20">
+                        <span class="material-symbols-outlined text-primary text-2xl">notification_important</span>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg">Items Running Low</p>
+                        <p class="text-base text-zinc-300">3 items need reorder</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 transition-transform transform hover:scale-105 hover:bg-white/20">
+                    <div class="p-4 rounded-full bg-primary/20">
+                        <span class="material-symbols-outlined text-primary text-2xl">redeem</span>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg">New Deals Available</p>
+                        <p class="text-base text-zinc-300">Check out 5 new offers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="flex flex-col gap-4">
+        <div class="flex justify-between items-center px-4">
+            <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Now Selling</h2>
+            <a class="text-sm font-semibold text-primary hover:underline hover:text-primary/90" href="{{ url_for('products') }}">View All</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+            {% for product in featured_products %}
+            <div class="group relative flex flex-col bg-white dark:bg-background-dark/50 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="relative h-48 bg-zinc-100 dark:bg-zinc-800">
+                    <img alt="{{ product.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="{{ product.image_url }}"/>
+                    {% if product.badge %}
+                    <div class="absolute top-2 right-2 bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-bold">{{ product.badge }}</div>
+                    {% endif %}
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white">{{ product.name }}</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ product.description }}</p>
+                    <div class="mt-4 flex-grow flex items-end justify-between">
+                        <p class="text-xl font-extrabold text-primary">₹{{ "%.0f"|format(product.price) }}</p>
+                        <button class="bg-primary text-white h-10 w-10 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary/90 hover:scale-110 add-to-cart" data-product-id="{{ product.id }}">
+                            <span class="material-symbols-outlined">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Personalized Feed Section -->
+    <div class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white px-4">Personalized Feed</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4">
+            <div class="flex flex-col justify-between gap-4 p-6 bg-white dark:bg-background-dark/50 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                <div class="flex gap-6">
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm font-medium text-primary">Recommended for You</p>
+                        <p class="text-lg font-bold text-zinc-900 dark:text-white">Top Picks for Your Store</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-300">Based on your past orders and local trends, these products are likely to be a hit with your customers.</p>
+                    </div>
+                    <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTbAgIqqYGH6cwHEQ-f_7qckXz3HozKvgdu5mptmDN1j9Ls9v2fnDHcVehGTtCrUttYxx_N7utdmbvBGPTmNxsofl7i3IZPaP_iq5GCAyEs5GcNOvDjP-LKD5jBwvT6-S1OJr28w2phCVLH-1jTwJ4NXlFoMHxWg1l0m4Rx-ZaJ7hZniO54pIvpEBNOrEkfQLEn3rrhucuGWWixZ_oiWUzVKBV6YczP26PZQ-jpiwBEzlFdU9fjwACFsA_9BPH7nCa5kHJduTHklw");'></div>
+                </div>
+                <a href="{{ url_for('products') }}" class="bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold h-10 px-5 rounded-lg w-fit hover:bg-primary/20 dark:hover:bg-primary/30 transition-all duration-300 hover:scale-105">Shop Now</a>
+            </div>
+            <div class="flex flex-col justify-between gap-4 p-6 bg-white dark:bg-background-dark/50 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                <div class="flex gap-6">
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm font-medium text-primary">Local Trend Badge</p>
+                        <p class="text-lg font-bold text-zinc-900 dark:text-white">Trending in Your Area</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-300">Discover the most popular products in your region, helping you stay ahead of the competition.</p>
+                    </div>
+                    <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1m_IXrYC2yphNXt4iVS1NX7g3HrEx8EJzv_LoU70q6hISMbC9xKYem1lnQcUzmK0LQMD2E7gHDA0DIS0dqfOXKjmJWnc0aQGZPO4U5gq_WGzWnTR0InnmywfDQuAn41IN4yB3bdV3-tZPYtRpcvpsDaUYST0TSy9TgNhoXVedGANPg8lw1HXaOdqHHF2R5dEVNOR10aMwFlwG4rC8vSP4t-AAeedYCTnvum342TqbIwkpejc44bXTCrgryNb7I976ToNPMfXo9q8");'></div>
+                </div>
+                <button class="bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold h-10 px-5 rounded-lg w-fit hover:bg-primary/20 dark:hover:bg-primary/30 transition-all duration-300 hover:scale-105">View Trends</button>
+            </div>
+            <div class="flex flex-col justify-between gap-4 p-6 bg-white dark:bg-background-dark/50 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+                <div class="flex gap-6">
+                    <div class="flex-1 space-y-2">
+                        <p class="text-sm font-medium text-primary">Seasonal Deals</p>
+                        <p class="text-lg font-bold text-zinc-900 dark:text-white">Summer Savings</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-300">Get ready for the summer season with our curated selection of seasonal products and special offers.</p>
+                    </div>
+                    <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-lg bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1m_IXrYC2yphNXt4iVS1NX7g3HrEx8EJzv_LoU70q6hISMbC9xKYem1lnQcUzmK0LQMD2E7gHDA0DIS0dqfOXKjmJWnc0aQGZPO4U5gq_WGzWnTR0InnmywfDQuAn41IN4yB3bdV3-tZPYtRpcvpsDaUYST0TSy9TgNhoXVedGANPg8lw1HXaOdqHHF2R5dEVNOR10aMwFlwG4rC8vSP4t-AAeedYCTnvum342TqbIwkpejc44bXTCrgryNb7I976ToNPMfXo9q8");'></div>
+                </div>
+                <button class="bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold h-10 px-5 rounded-lg w-fit hover:bg-primary/20 dark:hover:bg-primary/30 transition-all duration-300 hover:scale-105">View Deals</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
