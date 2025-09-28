@@ -5,6 +5,9 @@
   command = "npm run build"
   publish = "dist"
 
+  [build.environment]
+    VITE_API_BASE = "https://qwipo-backend-lzed.onrender.com"
+
 # Proxy all /api/* requests to your deployed backend
 [[redirects]]
   from = "/api/*"
