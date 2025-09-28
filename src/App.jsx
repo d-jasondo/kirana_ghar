@@ -10,6 +10,7 @@ import Deals from './pages/Deals'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Recommendations from './pages/Recommendations'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/recs" element={<Recommendations />} />
               <Route path="/brands" element={<Brands />} />
               <Route path="/deals" element={<Deals />} />
               <Route path="/cart" element={<Cart />} />
