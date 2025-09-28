@@ -1,6 +1,5 @@
 # Netlify configuration for deploying the frontend and proxying API calls
-# IMPORTANT: Replace the backend URL below after you deploy your backend (e.g. Render)
-# Example backend URL: https://qwipo-backend.onrender.com
+# Backend URL (Render): https://qwipo-backend-lzed.onrender.com
 
 [build]
   command = "npm run build"
@@ -9,6 +8,6 @@
 # Proxy all /api/* requests to your deployed backend
 [[redirects]]
   from = "/api/*"
-  to = "https://YOUR_BACKEND_URL/api/:splat"
+  to = "https://qwipo-backend-lzed.onrender.com/api/:splat"
   status = 200
   force = true
