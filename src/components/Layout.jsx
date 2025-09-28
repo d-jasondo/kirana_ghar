@@ -13,17 +13,32 @@ const Layout = ({ children }) => {
   const [showSearchResults, setShowSearchResults] = useState(false)
 
   const cartCount = getCartCount()
-
   const handleSearch = async (query) => {
     setSearchQuery(query)
     if (query.length >= 2) {
       try {
         const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`)
-        const results = await response.json()
-        setSearchResults(results)
+        if (!response.ok) {
+          const text = await response.text().catch(() => '')
+          throw new Error(`HTTP ${response.status}: ${text?.slice(0,120)}`)
+        }
+        const ct = response.headers.get('content-type') || ''
+        let results = []
+        if (ct.includes('application/json')) {
+          try {
+            results = await response.json()
+          } catch (error) {
+            console.error('Search JSON parse error:', error)
+            results = []
+          }
+        } else {
+          // Consume body to avoid stream issues but ignore content
+          await response.text()
+          results = []
+        }
+        setSearchResults(results || [])
         setShowSearchResults(true)
       } catch (error) {
-        console.error('Search error:', error)
       }
     } else {
       setSearchResults([])
