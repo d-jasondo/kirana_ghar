@@ -11,3 +11,9 @@
   to = "https://qwipo-backend-lzed.onrender.com/api/:splat"
   status = 200
   force = true
+
+# SPA fallback: route all non-API paths to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
